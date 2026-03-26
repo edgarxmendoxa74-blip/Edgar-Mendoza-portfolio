@@ -196,13 +196,13 @@ const Home = () => {
                 <div style={{ position: 'absolute', inset: 0, background: 'var(--dark)', overflow: 'hidden' }}>
                     {/* Bouncing Balls */}
                     {[
-                        { size: '50px', top: '10%', left: '10%', color: 'var(--blue)', duration: 4 },
-                        { size: '40px', top: '70%', left: '80%', color: 'var(--accent-gold)', duration: 6 },
-                        { size: '30px', top: '30%', left: '60%', color: 'var(--blue)', duration: 3 },
-                        { size: '60px', top: '80%', left: '20%', color: 'var(--accent-gold)', duration: 8 },
-                        { size: '35px', top: '40%', left: '40%', color: 'var(--blue)', duration: 5 },
-                        { size: '45px', top: '15%', left: '75%', color: 'var(--blue)', duration: 4.5 },
-                        { size: '30px', top: '60%', left: '45%', color: 'var(--accent-gold)', duration: 7 },
+                        { size: '100px', top: '10%', left: '10%', color: 'var(--blue)', duration: 4 },
+                        { size: '120px', top: '70%', left: '80%', color: 'var(--accent-gold)', duration: 6 },
+                        { size: '90px', top: '30%', left: '60%', color: 'var(--blue)', duration: 3 },
+                        { size: '150px', top: '80%', left: '20%', color: 'var(--accent-gold)', duration: 8 },
+                        { size: '110px', top: '40%', left: '40%', color: 'var(--blue)', duration: 5 },
+                        { size: '130px', top: '15%', left: '75%', color: 'var(--blue)', duration: 4.5 },
+                        { size: '100px', top: '60%', left: '45%', color: 'var(--accent-gold)', duration: 7 },
                     ].map((ball, i) => (
                         <motion.div
                             key={i}
@@ -212,8 +212,8 @@ const Home = () => {
                                 height: ball.size,
                                 borderRadius: '50%',
                                 background: ball.color,
-                                filter: 'blur(40px)',
-                                opacity: 0.7,
+                                filter: 'blur(30px)',
+                                opacity: 0.8,
                                 top: ball.top,
                                 left: ball.left,
                             }}
