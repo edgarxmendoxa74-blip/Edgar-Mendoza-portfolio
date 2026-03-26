@@ -1,5 +1,9 @@
 {
   "name": "edgar-portfolio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edgarxmendoxa74-blip/Edgar-Mendoza-portfolio.git"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
