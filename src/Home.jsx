@@ -291,7 +291,14 @@ const Home = () => {
 
                         <div className="client-grid" style={{ display: 'flex', justifyContent: 'center', gap: '5rem', alignItems: 'center', flexWrap: 'wrap', opacity: 0.7 }}>
                             {businesses.map((biz, i) => (
-                                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <a 
+                                    key={i} 
+                                    href={biz.link || "#"} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', transition: 'all 0.3s' }}
+                                    className="client-logo-link"
+                                >
                                     {biz.image ? (
                                         <img src={biz.image} alt={biz.name} style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                                     ) : (
@@ -299,7 +306,7 @@ const Home = () => {
                                             {biz.name.toUpperCase()}
                                         </span>
                                     )}
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>
