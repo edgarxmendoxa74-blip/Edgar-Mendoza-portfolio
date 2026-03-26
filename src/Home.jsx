@@ -100,20 +100,19 @@ const Home = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeCategory, setActiveCategory] = useState('Development');
-    const [businesses, setBusinesses] = useState([
-        { name: 'ANTONIO\'S GROUP', image: null },
-        { name: 'FOODEE GLOBAL', image: null },
-        { name: 'THE BISTRO GROUP', image: null }
-    ]);
-    const { scrollYProgress } = useScroll();
-
-    useEffect(() => {
+    const [businesses, setBusinesses] = useState(() => {
         const saved = localStorage.getItem('admin_businesses');
         if (saved) {
-            const data = JSON.parse(saved).filter(b => b.name.toUpperCase() !== 'VINE & FIRE');
-            setBusinesses(data);
+            const data = JSON.parse(saved);
+            if (data.length > 0) return data;
         }
-    }, []);
+        return [
+            { name: 'ANTONIO\'S GROUP', image: null, link: '#' },
+            { name: 'FOODEE GLOBAL', image: null, link: '#' },
+            { name: 'THE BISTRO GROUP', image: null, link: '#' }
+        ];
+    });
+    const { scrollYProgress } = useScroll();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 60);
