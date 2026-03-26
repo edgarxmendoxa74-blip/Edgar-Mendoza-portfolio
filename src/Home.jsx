@@ -288,24 +288,59 @@ const Home = () => {
                             Businesses I work <span style={{ fontStyle: 'italic' }}>with</span>
                         </h2>
 
-                        <div className="client-grid" style={{ display: 'flex', justifyContent: 'center', gap: '5rem', alignItems: 'center', flexWrap: 'wrap', opacity: 0.7 }}>
+                        <div className="client-grid" style={{ 
+                            display: 'grid', 
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                            gap: '2.5rem', 
+                            marginTop: '2rem' 
+                        }}>
                             {businesses.map((biz, i) => (
-                                <a 
+                                <motion.div 
                                     key={i} 
-                                    href={biz.link || "#"} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    style={{ display: 'flex', alignItems: 'center', gap: '1rem', transition: 'all 0.3s' }}
-                                    className="client-logo-link"
+                                    whileHover={{ y: -10 }}
+                                    style={{ 
+                                        background: 'var(--dark-2)', 
+                                        padding: '2.5rem', 
+                                        borderRadius: '24px', 
+                                        border: '1px solid var(--border)',
+                                        textAlign: 'center',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        gap: '1.5rem',
+                                        transition: 'all 0.3s cubic-bezier(0.19, 1, 0.22, 1)'
+                                    }}
                                 >
-                                    {biz.image ? (
-                                        <img src={biz.image} alt={biz.name} style={{ height: '40px', width: 'auto', objectFit: 'contain', opacity: 0.8 }} />
-                                    ) : (
-                                        <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: 'var(--white)', fontWeight: 700, letterSpacing: '0.05em' }}>
-                                            {biz.name.toUpperCase()}
-                                        </span>
-                                    )}
-                                </a>
+                                    <div style={{ 
+                                        width: '80px', height: '80px', 
+                                        borderRadius: '20px', background: 'var(--dark)', 
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', 
+                                        border: '1px solid var(--border)', overflow: 'hidden'
+                                    }}>
+                                        {biz.image ? (
+                                            <img src={biz.image} alt={biz.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '10px' }} />
+                                        ) : (
+                                            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--blue)', fontFamily: 'var(--font-serif)' }}>
+                                                {biz.name ? biz.name[0].toUpperCase() : 'B'}
+                                            </span>
+                                        )}
+                                    </div>
+                                    
+                                    <div>
+                                        <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--white)' }}>{biz.name}</h3>
+                                        <p style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Partnered Client</p>
+                                    </div>
+
+                                    <a 
+                                        href={biz.link || "#"} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="btn btn-outline"
+                                        style={{ width: '100%', padding: '0.8rem', fontSize: '0.7rem' }}
+                                    >
+                                        Visit Website
+                                    </a>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
