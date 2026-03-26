@@ -299,7 +299,7 @@ const Home = () => {
                                     className="client-logo-link"
                                 >
                                     {biz.image ? (
-                                        <img src={biz.image} alt={biz.name} style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+                                        <img src={biz.image} alt={biz.name} style={{ height: '40px', width: 'auto', objectFit: 'contain', opacity: 0.8 }} />
                                     ) : (
                                         <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: 'var(--white)', fontWeight: 700, letterSpacing: '0.05em' }}>
                                             {biz.name.toUpperCase()}
