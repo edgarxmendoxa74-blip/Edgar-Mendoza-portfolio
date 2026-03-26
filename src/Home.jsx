@@ -272,6 +272,34 @@ const Home = () => {
                             <p style={{ color: 'var(--text)', fontSize: '1.05rem', lineHeight: 1.9, marginBottom: '3rem' }}>
                                 With a background in both culinary arts and software engineering, I provide unique digital solutions that don't just look pretty—they solve operational bottlenecks and maximize profitability for modern restaurants.
                             </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', margin: '4rem 0', borderTop: '1px solid var(--border)', paddingTop: '3rem' }} className="about-details-grid">
+                                <div>
+                                    <h4 style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: 'var(--white)', marginBottom: '1.5rem', opacity: 0.8, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <MapPin size={18} color="var(--blue)" /> Portfolio Office
+                                    </h4>
+                                    <address style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.8, fontStyle: 'normal' }}>
+                                        3rd Floor, High Street South<br />
+                                        Bonifacio Global City, Taguig
+                                    </address>
+                                </div>
+                                <div>
+                                    <h4 style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: 'var(--white)', marginBottom: '1.5rem', opacity: 0.8, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <Clock size={18} color="var(--blue)" /> Availability
+                                    </h4>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.8 }}>
+                                        Mon – Thu: 11AM – 10PM<br />
+                                        Fri – Sat: 11AM – 12MN
+                                    </p>
+                                </div>
+                                <div style={{ gridColumn: '1 / -1' }}>
+                                    <h4 style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: 'var(--white)', marginBottom: '1.5rem', opacity: 0.8, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <Phone size={18} color="var(--blue)" /> Connect
+                                    </h4>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.8 }}>
+                                        +63 917 123 4567 • hello@edgarskitchen.ph • @edgarskitchen
+                                    </p>
+                                </div>
+                            </div>
                             <a href="#menu" className="btn btn-outline">Explore My Solutions</a>
                         </div>
                     </div>
