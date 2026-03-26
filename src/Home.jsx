@@ -122,7 +122,8 @@ const Home = () => {
     }, []);
 
     return (
-        <div style={{ background: 'var(--dark)', minHeight: '100vh', color: 'var(--text)' }}>
+        <div style={{ background: 'var(--dark)', minHeight: '100vh', color: 'var(--text)', position: 'relative' }}>
+            <BackgroundBalls />
 
             {/* ═══════════ NAVIGATION ═══════════ */}
             <nav style={{
@@ -210,7 +211,7 @@ const Home = () => {
                                 borderRadius: '50%',
                                 background: ball.color,
                                 filter: 'blur(40px)',
-                                opacity: 0.15,
+                                opacity: 0.4,
                                 top: ball.top,
                                 left: ball.left,
                             }}
