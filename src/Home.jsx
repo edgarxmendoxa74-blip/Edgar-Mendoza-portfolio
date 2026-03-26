@@ -241,8 +241,7 @@ const Home = () => {
                         <h1 className="hero-title" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 4.5vw, 3.2rem)', color: 'var(--white)', lineHeight: 1.25, marginBottom: '2rem', maxWidth: '850px' }}>
                             "If you do not fix your <span style={{ fontStyle: 'italic', textDecoration: 'underline', color: 'var(--accent-gold)' }}>menu</span>, you didn't know it is <span style={{ fontStyle: 'italic', color: 'var(--blue)' }}>silently killing your profit."</span>
                         </h1>
-                        <div className="hero-btns-wrapper" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', maxWidth: '380px', margin: '0 auto' }}>
-                            <a href="#about" className="btn btn-outline btn-hero" style={{ padding: '0.9rem 1.5rem', fontSize: '0.65rem' }}>Read More</a>
+                        <div className="hero-btns-wrapper" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', margin: '0 auto' }}>
                             <a href="#contact" className="btn btn-gold btn-hero" style={{ padding: '0.9rem 1.5rem', fontSize: '0.65rem' }}>Inquire Me</a>
                             <a href="#menu" className="btn btn-gold btn-hero" style={{ padding: '0.9rem 1.5rem', fontSize: '0.65rem' }}>Try Sample Demo</a>
                             <a href="#gallery" className="btn btn-outline btn-hero" style={{ padding: '0.9rem 1.5rem', fontSize: '0.65rem' }}>View Sample Works</a>
@@ -301,7 +300,7 @@ const Home = () => {
                                     </p>
                                 </div>
                             </div>
-                            <a href="#menu" className="btn btn-outline">Explore My Solutions</a>
+
                         </div>
                     </div>
                 </div>
