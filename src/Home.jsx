@@ -347,6 +347,78 @@ const Home = () => {
                 </section>
 
 
+            {/* ═══════════ EXPERTISE (SERVICES) ═══════════ */}
+            <section id="menu" className="section" style={{ background: 'var(--white)' }}>
+                <div className="container">
+                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                        <p style={{ fontSize: '0.65rem', letterSpacing: '0.5em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '1.5rem', fontWeight: 600 }}>
+                            Services
+                        </p>
+                        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--white)', marginBottom: '3rem' }}>
+                            Our <span style={{ fontStyle: 'italic' }}>Expertise</span>
+                        </h2>
+
+                        {/* Category Tabs */}
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
+                            {serviceCategories.map(cat => (
+                                <button
+                                    key={cat.name}
+                                    onClick={() => setActiveCategory(cat.name)}
+                                    style={{
+                                        background: 'none', border: 'none', 
+                                        fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', 
+                                        fontWeight: 700, cursor: 'pointer', padding: '0.5rem 0',
+                                        color: activeCategory === cat.name ? 'var(--blue)' : 'var(--text-muted)',
+                                        borderBottom: `2px solid ${activeCategory === cat.name ? 'var(--blue)' : 'transparent'}`,
+                                        transition: 'all 0.3s'
+                                    }}
+                                >
+                                    {cat.name}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+                        {serviceCategories.find(c => c.name === activeCategory).items.map((item, i) => (
+                            <motion.div
+                                key={item.name}
+                                whileHover={{ y: -10 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    background: 'var(--dark-2)', 
+                                    padding: '3rem', 
+                                    borderRadius: '24px', 
+                                    border: '1px solid var(--border)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '1.5rem',
+                                    transition: 'all 0.3s'
+                                }}
+                            >
+                                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(37,99,235,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--blue)' }}>
+                                    {activeCategory === 'Development' && <Code size={20} />}
+                                    {activeCategory === 'Solutions' && <Zap size={20} />}
+                                    {activeCategory === 'Growth' && <TrendingUp size={20} />}
+                                </div>
+                                <div style={{ flex: 1 }}>
+                                    <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--white)' }}>{item.name}</h3>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem' }}>{item.desc}</p>
+                                </div>
+                                <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
+                                    <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700, color: 'var(--white)' }}>Consult Request</span>
+                                    <ArrowRight size={16} color="var(--blue)" />
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
             {/* ═══════════ CONTACT ═══════════ */}
             <section id="contact" className="section" style={{ display: "none",  background: 'var(--dark-2)', position: 'relative', overflow: 'hidden' }}>
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
