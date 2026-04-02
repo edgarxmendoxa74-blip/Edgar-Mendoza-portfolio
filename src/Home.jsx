@@ -188,17 +188,17 @@ const Home = () => {
 
                         <button 
                             onClick={() => setIsPlaybookOpen(true)} 
-                            className="btn btn-outline header-btn" 
-                            style={{ padding: '0.65rem 1.4rem', fontSize: '0.66rem', background: 'transparent', border: '1px solid var(--border)', cursor: 'pointer', color: 'var(--white)' }}
+                            className="btn header-btn" 
+                            style={{ padding: '0.65rem 1.4rem', fontSize: '0.66rem', background: '#6b7280', color: '#fff', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                         >
-                            Read More
+                            <BookOpen size={14} /> Read More
                         </button>
                         <a 
                             href="#contact" 
-                            className="btn btn-gold header-btn" 
-                            style={{ padding: '0.65rem 1.4rem', fontSize: '0.66rem' }}
+                            className="btn header-btn" 
+                            style={{ padding: '0.65rem 1.4rem', fontSize: '0.66rem', background: '#22c55e', color: '#fff', border: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                         >
-                            Contact Me
+                            <Mail size={14} /> Contact Me
                         </a>
                     </div>
 
@@ -230,18 +230,18 @@ const Home = () => {
 
                         <button 
                             onClick={() => { setIsMenuOpen(false); setIsPlaybookOpen(true); }} 
-                            className="btn btn-outline" 
-                            style={{ textAlign: 'center', padding: '1rem', color: '#fff', background: 'transparent', border: '1px solid var(--border)', cursor: 'pointer' }}
+                            className="btn" 
+                            style={{ textAlign: 'center', padding: '1rem', color: '#fff', background: '#6b7280', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
                         >
-                            Read More
+                            <BookOpen size={16} /> Read More
                         </button>
                         <a 
                             href="#contact" 
-                            className="btn btn-gold" 
+                            className="btn" 
                             onClick={() => setIsMenuOpen(false)} 
-                            style={{ textAlign: 'center', padding: '1rem' }}
+                            style={{ textAlign: 'center', padding: '1rem', background: '#22c55e', color: '#fff', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
                         >
-                            Contact Me
+                            <Mail size={16} /> Contact Me
                         </a>
                     </motion.div>
                 )}
@@ -447,16 +447,17 @@ const Home = () => {
                             <h3 style={{ fontSize: '1.8rem', color: 'var(--white)', marginBottom: '2.5rem', fontFamily: 'var(--font-serif)', textAlign: 'center' }}>Marketing Opportunities</h3>
                             <div className="marketing-grid" style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
                                 {[
-                                    { title: 'Run Ads', desc: 'Promote your Smart Menu using Facebook Ads and drive more orders.' },
-                                    { title: 'Repeat Customers', desc: 'Distribute QR cards so customers can easily order again anytime.' },
-                                    { title: 'In-Store Placement', desc: 'Place QR stickers on tables, counters, and walls for easy access.' },
-                                    { title: 'Social Media Integration', desc: 'Post your QR code and website link on your Facebook page.' }
+                                    { title: 'Run Ads', desc: 'Promote your Smart Menu using Facebook Ads and drive more orders.', icon: <Target size={24} /> },
+                                    { title: 'Repeat Customers', desc: 'Distribute QR cards so customers can easily order again anytime.', icon: <Users size={24} /> },
+                                    { title: 'In-Store Placement', desc: 'Place QR stickers on tables, counters, and walls for easy access.', icon: <MapPin size={24} /> },
+                                    { title: 'Social Media Integration', desc: 'Post your QR code and website link on your Facebook page.', icon: <Facebook size={24} /> }
                                 ].map((item, i) => (
                                     <motion.div 
                                         key={i} 
-                                        whileHover={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.15)' }}
+                                        whileHover={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.15)', y: -5 }}
                                         style={{ padding: '1.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.06)', transition: 'all 0.3s' }}
                                     >
+                                        <div style={{ marginBottom: '1rem', color: 'var(--accent-gold)', display: 'inline-flex', padding: '0.75rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px' }}>{item.icon}</div>
                                         <h4 style={{ color: 'var(--accent-gold)', fontSize: '1.15rem', marginBottom: '0.75rem', fontWeight: 700 }}>{item.title}</h4>
                                         <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>{item.desc}</p>
                                     </motion.div>
@@ -480,7 +481,7 @@ const Home = () => {
                                         whileHover={{ background: 'rgba(255, 255, 255, 0.05)', x: 5 }}
                                         style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.25rem 1.75rem', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.06)', transition: 'all 0.3s' }}
                                     >
-                                        <CheckCircle size={20} color="var(--accent-gold)" style={{ opacity: 0.9 }} />
+                                        <CheckCircle size={20} color="#22c55e" style={{ opacity: 0.9 }} />
                                         <span style={{ color: 'var(--white)', fontSize: '1rem', fontWeight: 500 }}>{feature}</span>
                                     </motion.div>
                                 ))}
@@ -496,15 +497,18 @@ const Home = () => {
                 <section style={{ padding: '6rem 0', background: 'var(--dark)' }}>
                     <div className="container">
                         <h2 style={{ textAlign: 'center', fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--white)', marginBottom: '4rem', fontWeight: 600 }}>
-                            Businesses I work <span style={{ fontStyle: 'italic' }}>with</span>
+                            Businesses I work <span style={{ fontStyle: 'italic', color: 'var(--blue)' }}>with</span>
                         </h2>
+                        <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto 3rem', lineHeight: 1.8 }}>
+                            Trusted by leading brands in the food and hospitality industry to deliver smart digital solutions that drive real results.
+                        </p>
 
                         <div className="client-grid" style={{ 
                             display: 'grid', 
                             gridTemplateColumns: 'repeat(2, 1fr)', 
-                            gap: '1.5rem', 
+                            gap: '1rem', 
                             marginTop: '2rem',
-                            maxWidth: '500px',
+                            maxWidth: '430px',
                             margin: '2rem auto 0'
                         }}>
                             {businesses.map((biz, i) => (
@@ -513,7 +517,7 @@ const Home = () => {
                                     whileHover={{ y: -5 }}
                                     style={{ 
                                         background: 'var(--dark-2)', 
-                                        padding: '1.25rem', 
+                                        padding: '1rem', 
                                         borderRadius: '0', 
                                         border: '1px solid var(--border)',
                                         textAlign: 'center',
@@ -521,29 +525,29 @@ const Home = () => {
                                         flexDirection: 'column',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        gap: '0.75rem',
+                                        gap: '0.5rem',
                                         aspectRatio: '1 / 1',
                                         transition: 'all 0.3s cubic-bezier(0.19, 1, 0.22, 1)'
                                     }}
                                 >
                                     <div style={{ 
-                                        width: '110px', height: '110px', 
+                                        width: '80px', height: '80px', 
                                         borderRadius: '0', background: 'var(--dark)', 
                                         display: 'flex', alignItems: 'center', justifyContent: 'center', 
                                         border: '1px solid var(--border)', overflow: 'hidden'
                                     }}>
                                         {biz.image ? (
-                                            <img src={biz.image} alt={biz.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '10px' }} />
+                                            <img src={biz.image} alt={biz.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '8px' }} />
                                         ) : (
-                                            <span style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--white)', fontFamily: 'var(--font-serif)', opacity: 0.9 }}>
+                                            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--white)', fontFamily: 'var(--font-serif)', opacity: 0.9 }}>
                                                 {biz.name ? biz.name[0].toUpperCase() : 'B'}
                                             </span>
                                         )}
                                     </div>
                                     
                                     <div>
-                                        <h3 style={{ fontSize: '0.95rem', marginBottom: '0.25rem', color: 'var(--white)' }}>{biz.name}</h3>
-                                        <p style={{ fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>Partnered Client</p>
+                                        <h3 style={{ fontSize: '0.85rem', marginBottom: '0.15rem', color: 'var(--white)' }}>{biz.name}</h3>
+                                        <p style={{ fontSize: '0.55rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>Partnered Client</p>
                                     </div>
 
                                     <a 
@@ -551,7 +555,7 @@ const Home = () => {
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         className="btn btn-outline"
-                                        style={{ width: '100%', padding: '0.55rem', fontSize: '0.6rem' }}
+                                        style={{ width: '100%', padding: '0.45rem', fontSize: '0.55rem' }}
                                     >
                                         Visit Website
                                     </a>
@@ -621,7 +625,7 @@ const Home = () => {
                                         <label style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', display: 'block', marginBottom: '0.5rem' }}>How can I help?</label>
                                         <textarea name="message" rows={4} required style={{ width: '100%', padding: '0.85rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)', color: 'var(--white)', borderRadius: '8px' }} placeholder="Write your message here..." />
                                     </div>
-                                    <button type="submit" className="btn btn-gold" style={{ padding: '1rem', border: 'none', cursor: 'pointer' }}>Send Message</button>
+                                    <button type="submit" className="btn" style={{ padding: '1rem', border: 'none', cursor: 'pointer', background: '#22c55e', color: '#fff' }}>Send Message</button>
                                 </form>
                             </div>
                         </div>
@@ -660,15 +664,6 @@ const Home = () => {
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.5)', transition: 'all 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'} aria-label="LinkedIn"><Linkedin size={22} /></a>
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.5)', transition: 'all 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'} aria-label="Facebook"><Facebook size={22} /></a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.5)', transition: 'all 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'} aria-label="Instagram"><Instagram size={22} /></a>
-                    </div>
-
-                    <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        <a href="mailto:hello@edgarskitchen.ph" style={{ color: '#ffffff', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 600, transition: 'all 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#3498db'} onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}>
-                            hello@edgarskitchen.ph
-                        </a>
-                        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', letterSpacing: '0.1em' }}>
-                            Manila, Philippines
-                        </span>
                     </div>
 
                     <div style={{ paddingTop: '2.5rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
@@ -1002,7 +997,7 @@ const Home = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => setIsPlaybookOpen(false)}
-                                    style={{ background: 'var(--white)', color: 'black', border: 'none', padding: '1.25rem 3.5rem', borderRadius: '50px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}
+                                    style={{ background: 'var(--white)', color: '#ffffff', border: 'none', padding: '1.25rem 3.5rem', borderRadius: '50px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}
                                 >
                                     Close Playbook
                                 </motion.button>
